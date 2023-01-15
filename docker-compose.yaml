@@ -1,18 +1,23 @@
 services:
+  nginx:
+    build: ./nginx
+    image: nginx
+    container_name: nginx
+    ports:
+      - "8080:80"
+    networks:
+      - node-network
   app:
     build: ./node
-    image: victorfreixinho/node-app
-    container_name: node-app
+    image: app
+    container_name: app
     tty: true
-    ports:
-      - "3000:3000"
     volumes:
       - ./node:/usr/src/app
     networks:
       - node-network
     depends_on:
       - db
-
   db:
     image: mysql
     container_name: node-db
