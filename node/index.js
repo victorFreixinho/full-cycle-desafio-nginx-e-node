@@ -26,7 +26,7 @@ connection.query("SELECT name FROM people", function (error, results, fields) {
 connection.end();
 
 app.get("/", (req, res) => {
-  res.send(`<h1>Full Cycle</h1><ul>${namesList}</ul>`);
+  res.send(`<h1>Full Cycle Rocks!</h1><ul>${namesList}</ul>`);
 });
 
 app.listen(port, () => {
