@@ -7,6 +7,8 @@ services:
       - "8080:80"
     networks:
       - node-network
+    depends_on:
+      - app
   app:
     build: ./node
     image: app
