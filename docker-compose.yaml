@@ -15,6 +15,7 @@ services:
     container_name: app
     tty: true
     volumes:
+      - /usr/src/app/node_modules
       - ./node:/usr/src/app
     networks:
       - node-network
