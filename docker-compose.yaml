@@ -1,7 +1,6 @@
 services:
   nginx:
     build: ./nginx
-    image: nginx
     container_name: nginx
     ports:
       - "8080:80"
@@ -22,8 +21,8 @@ services:
     depends_on:
       - db
   db:
-    image: mysql
-    container_name: node-db
+    image: mysql:5.7
+    container_name: nodedb
     command: --innodb-use-native-aio=0
     restart: always
     tty: true
